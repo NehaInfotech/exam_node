@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/createdata" method="post">
+      <table border="">
+        <tr>
+          <td>First Name:</td>
+          <td><input type="text" id="f_name" name="f_name" /><br /><br /></td>
+        </tr>
+      
+
+      <tr>
+        <td>Last Name:</td>
+        <td><input type="text" id="l_name" name="l_name" /><br /><br /></td>
+      </tr>
+      <tr>
+        <td>Gender:</td>
+
+        <td>
+          <input type="radio" name="gender" value="male" /> Male
+          <input type="radio" name="gender" value="female" /> Female<br /><br />
+        </td>
+      </tr>
+
+      <tr>
+        <td>hobby</td>
+        <td>
+          <input type="checkbox" name="hobby" value="cricket" /> Cricket
+          <input type="checkbox" name="hobby" value="hockey" /> reading
+          <input type="checkbox" name="hobby" value="football" /> Football
+          <input type="checkbox" name="hobby" value="kabaddi" /> Kabaddi
+          <input type="checkbox" name="hobby" value="wrestling" /> write poetry
+        </td>
+      </tr>
+
+      <tr>
+        <td>city:</td>
+        <td>
+          <select id="city" name="city">
+            <option value="surat">Surat</option>
+            <option value="ahmedabad">dwarka</option>
+            <option value="vadodara">Vadodara</option>
+            <option value="bhavnagar">amreli</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><button type="submit">Submit</button></td>
+      </tr>
+      <button type="submit">Submit</button>
+    </form>
+</table>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Gender</th>
+          <th>Hobby</th>
+          <th>City</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% allData.map((item) => { %>
+        <tr>
+          <td><%= item._id %></td>
+          <td><%= item.f_name %></td>
+          <td><%= item.gender %></td>
+          <td><%= item.hobby%></td>
+          <td><%= item.city %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>

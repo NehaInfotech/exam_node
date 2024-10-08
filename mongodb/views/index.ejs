@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/create" method="post">   
+     <table border="">
+    <tr>
+      <td>
+        <input type="text" name="Name" placeholder="Enter your name" value="<%= editdatas ? editdatas.Name : '' %>" />
+    </td>
+    </tr>
+    <tr>
+      <td>
+        surname: <input type="text" name="surname" value="" <%= editdatas ? editdatas.surname : '' %>>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        email: <input type="text" name="email" value="" <%= editdatas ? editdatas.email : '' %>>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        password: <input type="text" name="password" value="" <%= editdatas ? editdatas.password : '' %>>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="submit" value="submit">
+      </td>
+    </tr>
+  </table>
+  
+  
+  <table border="1">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Surname</td>
+        <td>Email</td>
+        <td>Number</td>
+        
+        <td>Delete</td>
+        <td>Update</td>
+    </tr>
+    <% data.map((item) => { %>
+    <tr>
+        <td><%= item._id %></td>
+        <td><%= item.Name %></td>
+        <td><%= item.surname %></td>
+        <td><%= item.email %></td>
+        <td><%= item.password %></td>
+       
+     
+        <td>
+            <button>
+                <a href="/deleteData?id=<%= item._id %>">Delete</a>
+            </button>
+        </td>
+        <td>
+            <button>
+                <a href="/updateData?id=<%= item._id %>">Update</a>
+            </button>
+        </td>
+    </tr>
+    <% }) %>
+</table>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
